@@ -7,7 +7,7 @@ $(function () {
     });
     //自定义密码校验
     layui.form.verify({
-        pwd: [/^[\S]{6,12}$/, '密码必须是6至12位且不能有空格'],
+        pwd: [/^[\S]{6,18}$/, '密码必须是6至18位且不能有空格'],
         repwd: function (value) {
             var pwd = $(".reg-box [name=password]").val();
             if (pwd != value) {
@@ -15,6 +15,7 @@ $(function () {
             }
         }
     });
+    // 解构赋值
     var { layer } = layui;
     //监听注册表单的提交事件
     $("#form_reg").on("submit", function (e) {
